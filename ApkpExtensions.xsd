@@ -13,9 +13,8 @@
 	<!-- AlertOccurrenceIdentifier Extension -->
 	<xsd:element name="AlertOccurrenceIdentifier" type="apkp:AlertOccurrenceIdentifierType">
 		<xsd:annotation>
-			<xsd:documentation> The apkp:AlertOccurrenceIdentifier is used to uniquely identify the
-				ALERT CONDITION and its state within the SDC network. An SDC ALERT PROVIDER SHALL
-				set @ext:MustUnderstand = "false" for each AlertOccurenceIdentifier element. </xsd:documentation>
+			<xsd:documentation>The apkp:AlertOccurrenceIdentifier is used to uniquely identify the
+				ALERT CONDITION and its state within the SDC network.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="AlertOccurrenceIdentifierType">
@@ -31,11 +30,9 @@
 	<!-- MaxTechnicalConfirmationDelay Extension -->
 	<xsd:element name="MaxTechnicalConfirmationDelay" type="apkp:MaxTechnicalConfirmationDelayType">
 		<xsd:annotation>
-			<xsd:documentation>
-				pm:AlertConditionDescriptor/ext:Extension/apkp:MaxTechnicalConfirmationDelay is used
-				to define the maximum timespan that an SDC ALERT CONSUMER has in order to send a
-				technical confirmation to the SDC ALERT PROVIDER. An SDC ALERT PROVIDER SHALL set
-				@ext:MustUnderstand = "true" for each MaxTechnicalConfirmationDelay element. </xsd:documentation>
+			<xsd:documentation>pm:AlertConditionDescriptor/ext:Extension/apkp:MaxTechnicalConfirmationDelay
+				is used to define the maximum timespan that an SDC ALERT CONSUMER has in order to
+				send a technical confirmation to the SDC ALERT PROVIDER.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="MaxTechnicalConfirmationDelayType">
@@ -51,16 +48,13 @@
 	<!-- DistributedSystemType Extension -->
 	<xsd:element name="DistributedSystemType" type="apkp:DistributedSystemExtensionType">
 		<xsd:annotation>
-			<xsd:documentation> The EXTENSION apkp:DistributedSystemType is used to express if the
-				ALERT SYSTEM of the MDS is intended to be used in a DAS or DIS only. An SDC ALERT
-				PROVIDER SHALL set @ext:MustUnderstand = "true" for each DistributedSystemType
-				element. </xsd:documentation>
+			<xsd:documentation>The EXTENSION apkp:DistributedSystemType is used to express if the
+				ALERT SYSTEM of the MDS is intended to be used in a DAS or DIS only.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="DistributedSystemExtensionType">
 		<xsd:annotation>
-			<xsd:documentation>Type definition for DistributedSystemType EXTENSION. An SDC ALERT
-				PROVIDER SHALL set it to the type of distributed system it supports.</xsd:documentation>
+			<xsd:documentation>Type definition for DistributedSystemType EXTENSION.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:extension base="apkp:DistributedSystemTypeType">
@@ -85,9 +79,8 @@
 	<!-- CountdownEndTime Extension -->
 	<xsd:element name="CountdownDuration" type="apkp:CountdownEndTimeType">
 		<xsd:annotation>
-			<xsd:documentation> The CountdownDuration extension is used for providing the duration
-				after which the ALARM SIGNAL INACTIVATION STATE will end automatically An SDC ALERT
-				PROVIDER SHALL set @ext:MustUnderstand = "false" for each CountdownDuration element. </xsd:documentation>
+			<xsd:documentation>The CountdownDuration extension is used for providing the duration
+				after which the ALARM SIGNAL INACTIVATION STATE will end automatically.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CountdownEndTimeType">
@@ -105,16 +98,15 @@
 	<!-- AlertSystemFailure Extension -->
 	<xsd:element name="AlertSystemFailure" type="apkp:AlertSystemFailureType">
 		<xsd:annotation>
-			<xsd:documentation> The apkp:AlertSystemFailure is used to indicate the functional
-				condition of an ALERT SYSTEM. An SDC ALERT PROVIDER SHALL set @ext:MustUnderstand =
-				"false" for each AlertSystemFailure element. </xsd:documentation>
+			<xsd:documentation>The apkp:AlertSystemFailure is used to indicate the functional
+				condition of an ALERT SYSTEM.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="AlertSystemFailureType">
 		<xsd:annotation>
-			<xsd:documentation> Element that is set to false, if an SDC ALERT PROVIDER ensures that
+			<xsd:documentation>Element that is set to false, if an SDC ALERT PROVIDER ensures that
 				the ALERT SYSTEM is in a functional condition and is specifying an
-				pm:AlertSystemDescriptor/@SelfCheckPeriod. True otherwise. </xsd:documentation>
+				pm:AlertSystemDescriptor/@SelfCheckPeriod. True otherwise.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:boolean">
@@ -125,9 +117,8 @@
 	<!-- SignalLatched Extension -->
 	<xsd:element name="SignalLatched" type="apkp:LatchingAlertConditionType">
 		<xsd:annotation>
-			<xsd:documentation> apkp:SignalLatched is used to indicate if at least one ALERT SIGNAL
-				associated to an SDC ALERT CONDITION is latched. An SDC ALERT PROVIDER SHALL set
-				@ext:MustUnderstand = "false" for each SignalLatched element. </xsd:documentation>
+			<xsd:documentation>apkp:SignalLatched is used to indicate if at least one ALERT SIGNAL
+				associated to an SDC ALERT CONDITION is latched.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="LatchingAlertConditionType">
@@ -144,36 +135,34 @@
 	<!-- LatchedPriority Extension -->
 	<xsd:element name="LatchedPriority" type="pm:AlertConditionPriority">
 		<xsd:annotation>
-			<xsd:documentation> apkp:LatchedPriority is used to provide the PRIORITY of an SDC ALERT
+			<xsd:documentation>apkp:LatchedPriority is used to provide the PRIORITY of an SDC ALERT
 				CONDITION in case this PRIORITY changes when in latched state compared to other
-				states. An SDC ALERT PROVIDER SHALL set @ext:MustUnderstand = "false" for each
-				LatchedPriority element. </xsd:documentation>
+				states.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<!-- Acknowledgement Extension -->
 	<xsd:element name="Acknowledgement" type="apkp:AcknowledgementType">
 		<xsd:annotation>
-			<xsd:documentation> apkp:Acknowledgement is used to indicate if an SDC ALERT CONDITION
-				is ACKNOWLEDGED. An SDC ALERT PROVIDER SHALL set @ext:MustUnderstand = "false" for
-				each Acknowledgement element. </xsd:documentation>
+			<xsd:documentation>apkp:Acknowledgement is used to indicate if an SDC ALERT CONDITION is
+				ACKNOWLEDGED.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="AcknowledgementType">
 		<xsd:annotation>
-			<xsd:documentation> Type definition for the apkp:Acknowledgement element providing
+			<xsd:documentation>Type definition for the apkp:Acknowledgement element providing
 				information about the kind of acknowledgedment, the start timestamp of the
 				acknowledgement and the duration of acknowledgedment in case of timed
-				acknowledgedment </xsd:documentation>
+				acknowledgedment</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="State" type="apkp:AcknowledgementAcknowledgementType">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that set to the type of the acknowledgedment. </xsd:documentation>
+				<xsd:documentation>Attribute that set to the type of the acknowledgedment.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="StartTime" type="pm:Timestamp" use="optional">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that is set to the time, the pm:AlertConditionState
-					was acknowledged. </xsd:documentation>
+				<xsd:documentation>Attribute that is set to the time, the pm:AlertConditionState was
+					acknowledged.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="ActualDuration" type="xsd:duration" use="optional">
@@ -188,17 +177,17 @@
 		<xsd:restriction base="xsd:string">
 			<xsd:enumeration value="Timed">
 				<xsd:annotation>
-					<xsd:documentation> Value for timed acknowledgement. </xsd:documentation>
+					<xsd:documentation>Value for timed acknowledgement.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="Indefinite">
 				<xsd:annotation>
-					<xsd:documentation> Value for indefinite acknowledgement. </xsd:documentation>
+					<xsd:documentation>Value for indefinite acknowledgement.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 			<xsd:enumeration value="Both">
 				<xsd:annotation>
-					<xsd:documentation> Value for timed and indefinite acknowledgement. </xsd:documentation>
+					<xsd:documentation>Value for timed and indefinite acknowledgement.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:enumeration>
 		</xsd:restriction>
@@ -206,16 +195,15 @@
 	<!-- ConditionAcknowledgement Extension -->
 	<xsd:element name="ConditionAcknowledgement" type="apkp:ConditionAcknowledgementType">
 		<xsd:annotation>
-			<xsd:documentation> apkp:ConditionAcknowledgement is used to indicate if and how an SDC
-				ALERT CONDITION can be ACKNOWLEDGED. An SDC ALERT PROVIDER SHALL set
-				@ext:MustUnderstand = "false" for each ConditionAcknowledgement element. </xsd:documentation>
+			<xsd:documentation>apkp:ConditionAcknowledgement is used to indicate if and how an SDC
+				ALERT CONDITION can be ACKNOWLEDGED.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="ConditionAcknowledgementType">
 		<xsd:annotation>
-			<xsd:documentation> Type definition for the apkp:ConditionAcknowledgement element
+			<xsd:documentation>Type definition for the apkp:ConditionAcknowledgement element
 				providing information about the kind of acknowledgedment and the duration of
-				acknowledgedment in case of timed acknowledgedment. </xsd:documentation>
+				acknowledgedment in case of timed acknowledgedment.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:attribute name="Supported" type="apkp:AcknowledgementAcknowledgementType">
 			<xsd:annotation>
@@ -239,8 +227,7 @@
 				happened in comparison to the pm:AlertConditionState/@DeterminationTime used to
 				determine the point in time the pm:AlertConditionState/@Presence changed. An SDC
 				ALERT PROVIDER SHALL only use apkp:PriorityChange when
-				pm:AlertConditionState/@Presence = True. An SDC ALERT PROVIDER SHALL set
-				@ext:MustUnderstand = "false" for each PriorityChange element. </xsd:documentation>
+				pm:AlertConditionState/@Presence = True.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="PriorityChangeType">
@@ -261,8 +248,7 @@
 			<xsd:documentation> The MarkedEvent extension is used to communicate an event that has
 				been flagged by a USER or a MEDICAL DEVICE as of particular interest in order to
 				indicate to an SDC ALERT CONSUMER to additionally store parameter and waveform data
-				for a specific amount of time before and after the event. An SDC ALERT PROVIDER
-				SHALL set @ext:MustUnderstand = "false" for each MarkedEvent element. </xsd:documentation>
+				for a specific amount of time before and after the event.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="MarkedEventType">
@@ -329,8 +315,7 @@
 				an SDC ALERT PROVIDER participating in a DIS or DAS has determined that RISK
 				MANAGEMENT or an applied standard requires the fulfillment of certain boundaries
 				regarding the duration of the sum of ALARM CONDITION DELAY and ALARM SIGNAL
-				GENERATION DELAY. An SDC ALERT PROVIDER SHALL set @ext:MustUnderstand = "false" for
-				each DistributedAlarmDelay element. </xsd:documentation>
+				GENERATION DELAY.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="DistributedAlarmDelayType">
@@ -345,8 +330,7 @@
 	<xsd:element name="ActualText" type="apkp:ActualTextType">
 		<xsd:annotation>
 			<xsd:documentation> The ActualText extension is used to provide updated text of an SDC
-				ALERT CONDITION, when additional runtime information is available. An SDC ALERT
-				PROVIDER SHALL set @ext:MustUnderstand = "false" for each ActualText element. </xsd:documentation>
+				ALERT CONDITION, when additional runtime information is available.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="ActualTextType">
@@ -373,9 +357,7 @@
 			<xsd:documentation> apkp:CommunicationContributionDelay: Timespan that a Provider takes
 				from the point of time where the ALARM CONDITION has been determined to the point of
 				time where the information is put on the network. This is an information that is for
-				instance required by the clause 6.4.2 in [IEC 60601-1-8]. An SDC ALERT PROVIDER
-				SHALL set @ext:MustUnderstand = "false" for each CommunicationContributionDelay
-				element. </xsd:documentation>
+				instance required by the clause 6.4.2 in [IEC 60601-1-8].</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="CommunicationContributionDelayType">
@@ -393,9 +375,7 @@
 		<xsd:annotation>
 			<xsd:documentation> If an SDC ALERT PROVIDER sets an ALARM SIGNAL INACTIVATION STATE for
 				SDC ALERT CONDITIONs that are above a certain pm:AlertConditionState/@Rank, this
-				Extension can be used to inform an SDC ALERT CONSUMER about the value of that @Rank.
-				An SDC ALERT PROVIDER SHALL set @ext:MustUnderstand = "false" for each
-				AlarmInactivationStateBasedOnRank element. </xsd:documentation>
+				Extension can be used to inform an SDC ALERT CONSUMER about the value of that @Rank.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="AISBasedOnRankType">
@@ -414,8 +394,7 @@
 		<xsd:annotation>
 			<xsd:documentation> The MostViolated extension is used to provide the most extrem value
 				of the Metric that is at the source of the associated SDC ALERT CONDITION while the
-				ALERT CONDITION has its presence = true. An SDC ALERT PROVIDER SHALL set
-				@ext:MustUnderstand = "false" for each MostViolated element. </xsd:documentation>
+				ALERT CONDITION has its presence = true.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="MostViolatedType">
