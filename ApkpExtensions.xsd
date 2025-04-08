@@ -339,7 +339,7 @@
         </xsd:annotation>
     </xsd:element>
 	<xsd:complexType name="DistributedAlarmDelayType">
-        <xsd:attribute name="MaxAlertSignalGenerationDelay " type="xsd:duration">
+        <xsd:attribute name="MaxAlertSignalGenerationDelay" type="xsd:duration">
             <xsd:annotation>
                 <xsd:documentation>
 				Attribute that is set to the maximum delay that is allowed on the SDC ALERT CONSUMER side according to RISK MANAGEMENT or applied standard.
