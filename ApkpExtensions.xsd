@@ -167,8 +167,8 @@
 		</xsd:attribute>
 		<xsd:attribute name="ActualDuration" type="xsd:duration" use="optional">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that is optionally set to the duration, that an
-					pm:AlertConditionState is in the acknowledged state. </xsd:documentation>
+				<xsd:documentation>Attribute that is optionally set to the duration, that an
+					pm:AlertConditionState is in the acknowledged state.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute ref="ext:MustUnderstand" use="optional" />
@@ -207,13 +207,13 @@
 		</xsd:annotation>
 		<xsd:attribute name="Supported" type="apkp:AcknowledgementAcknowledgementType">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that set to the type of the acknowledgedment. </xsd:documentation>
+				<xsd:documentation>Attribute that set to the type of the acknowledgedment.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="Duration" type="xsd:duration" use="optional">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that is optionally set to the duration, that an
-					pm:AlertConditionState would be set in the acknowledged state. </xsd:documentation>
+				<xsd:documentation>Attribute that is optionally set to the duration, that an
+					pm:AlertConditionState would be set in the acknowledged state.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute ref="ext:MustUnderstand" use="optional" />
@@ -245,7 +245,7 @@
 	<!-- MarkedEvent Extension -->
 	<xsd:element name="MarkedEvent" type="apkp:MarkedEventType">
 		<xsd:annotation>
-			<xsd:documentation> The MarkedEvent extension is used to communicate an event that has
+			<xsd:documentation>The MarkedEvent extension is used to communicate an event that has
 				been flagged by a USER or a MEDICAL DEVICE as of particular interest in order to
 				indicate to an SDC ALERT CONSUMER to additionally store parameter and waveform data
 				for a specific amount of time before and after the event.</xsd:documentation>
@@ -255,81 +255,80 @@
 		<xsd:sequence>
 			<xsd:element name="EventType" type="pm:CodedValue" minOccurs="0">
 				<xsd:annotation>
-					<xsd:documentation> The unit (dimension) of pm:Measurement. </xsd:documentation>
+					<xsd:documentation>The unit (dimension) of pm:Measurement.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="DeterminationTime" type="pm:Timestamp" use="required">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that optionally contains the pm:HandleRef of the MDIB
-					element that triggered the marked event. </xsd:documentation>
+				<xsd:documentation>Attribute that optionally contains the pm:HandleRef of the MDIB
+					element that triggered the marked event.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="EventMdibVersion" type="pm:VersionCounter" use="required">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that is set to the pm:MdibVersionGroup/@MdibVersion at
-					the point in time that the event was marked. </xsd:documentation>
+				<xsd:documentation>Attribute that is set to the pm:MdibVersionGroup/@MdibVersion at
+					the point in time that the event was marked.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="EventSource" type="pm:HandleRef" use="optional">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that optionally is set to the pm:HandleRef of the MDIB
-					element that triggered the marked event. </xsd:documentation>
+				<xsd:documentation>Attribute that optionally is set to the pm:HandleRef of the MDIB
+					element that triggered the marked event.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="SnapshotStartTime" type="pm:Timestamp" use="optional">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that optionally is set to the time the time, the
-					snapshot starts. </xsd:documentation>
+				<xsd:documentation>Attribute that optionally is set to the time the time, the
+					snapshot starts.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="SnapshotEndTime" type="pm:Timestamp" use="optional">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that optionally is set to the time the time, the
-					snapshot ends. </xsd:documentation>
+				<xsd:documentation>Attribute that optionally is set to the time the time, the
+					snapshot ends.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="SnapshotEntries" type="pm:EntryRef" use="optional">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that optionally is set to the list of pm:HandleRef of
-					the MDIB data belonging to the snapshot. </xsd:documentation>
+				<xsd:documentation>Attribute that optionally is set to the list of pm:HandleRef of
+					the MDIB data belonging to the snapshot.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="SnapshotStartVersion" type="pm:VersionCounter" use="optional">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that optionally is set to the
-					pm:MdibVersionGroup/@MdibVersion, the snapshot starts. </xsd:documentation>
+				<xsd:documentation>Attribute that optionally is set to the
+					pm:MdibVersionGroup/@MdibVersion, the snapshot starts.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 		<xsd:attribute name="SnapshotEndVersion" type="pm:VersionCounter" use="optional">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that optionally is set to the
-					pm:MdibVersionGroup/@MdibVersion, the snapshot ends </xsd:documentation>
+				<xsd:documentation>Attribute that optionally is set to the
+					pm:MdibVersionGroup/@MdibVersion, the snapshot ends</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
 	<!-- MaxDistributedAlarmDelay Extension -->
 	<xsd:element name="MaxDistributedAlarmDelay" type="apkp:DistributedAlarmDelayType">
 		<xsd:annotation>
-			<xsd:documentation> The MaxDistributedAlarmDelay extension is used to communicate that
-				an SDC ALERT PROVIDER participating in a DIS or DAS has determined that RISK
-				MANAGEMENT or an applied standard requires the fulfillment of certain boundaries
-				regarding the duration of the sum of ALARM CONDITION DELAY and ALARM SIGNAL
-				GENERATION DELAY.</xsd:documentation>
+			<xsd:documentation>The MaxDistributedAlarmDelay extension is used to communicate that an
+				SDC ALERT PROVIDER participating in a DIS or DAS has determined that RISK MANAGEMENT
+				or an applied standard requires the fulfillment of certain boundaries regarding the
+				duration of the sum of ALARM CONDITION DELAY and ALARM SIGNAL GENERATION DELAY.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="DistributedAlarmDelayType">
 		<xsd:attribute name="MaxAlertSignalGenerationDelay" type="xsd:duration">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that is set to the maximum delay that is allowed on
-					the SDC ALERT CONSUMER side according to RISK MANAGEMENT or applied standard. </xsd:documentation>
+				<xsd:documentation>Attribute that is set to the maximum delay that is allowed on the
+					SDC ALERT CONSUMER side according to RISK MANAGEMENT or applied standard.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
 	<!-- ActualText Extension -->
 	<xsd:element name="ActualText" type="apkp:ActualTextType">
 		<xsd:annotation>
-			<xsd:documentation> The ActualText extension is used to provide updated text of an SDC
+			<xsd:documentation>The ActualText extension is used to provide updated text of an SDC
 				ALERT CONDITION, when additional runtime information is available.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
@@ -342,9 +341,9 @@
 				<xsd:element name="DynamicDescriptionWithPlaceholders" type="pm:LocalizedText"
 					minOccurs="1" maxOccurs="unbounded">
 					<xsd:annotation>
-						<xsd:documentation> Element providing the more precise text for an SDC ALERT
+						<xsd:documentation>Element providing the more precise text for an SDC ALERT
 							CONDITION. There can be multiple element within an apkp:ActualText, for
-							instance at least one element for each supported language. </xsd:documentation>
+							instance at least one element for each supported language.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:choice>
@@ -354,7 +353,7 @@
 	<xsd:element name="CommunicationContributionDelay"
 		type="apkp:CommunicationContributionDelayType">
 		<xsd:annotation>
-			<xsd:documentation> apkp:CommunicationContributionDelay: Timespan that a Provider takes
+			<xsd:documentation>apkp:CommunicationContributionDelay: Timespan that a Provider takes
 				from the point of time where the ALARM CONDITION has been determined to the point of
 				time where the information is put on the network. This is an information that is for
 				instance required by the clause 6.4.2 in [IEC 60601-1-8].</xsd:documentation>
@@ -373,15 +372,15 @@
 	<!-- AlarmInactivationStateBasedOnRank Extension -->
 	<xsd:element name="AlarmInactivationStateBasedOnRank" type="apkp:AISBasedOnRankType">
 		<xsd:annotation>
-			<xsd:documentation> If an SDC ALERT PROVIDER sets an ALARM SIGNAL INACTIVATION STATE for
+			<xsd:documentation>If an SDC ALERT PROVIDER sets an ALARM SIGNAL INACTIVATION STATE for
 				SDC ALERT CONDITIONs that are above a certain pm:AlertConditionState/@Rank, this
 				Extension can be used to inform an SDC ALERT CONSUMER about the value of that @Rank.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="AISBasedOnRankType">
 		<xsd:annotation>
-			<xsd:documentation> Element that is set to the numeric value of the @Rank above which
-				all SDC ALERT CONDITIONs have to follow the ALARM SIGNAL INACTIVATION STATE. </xsd:documentation>
+			<xsd:documentation>Element that is set to the numeric value of the @Rank above which all
+				SDC ALERT CONDITIONs have to follow the ALARM SIGNAL INACTIVATION STATE.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
 			<xsd:extension base="xsd:int">
@@ -392,47 +391,47 @@
 	<!-- MostViolated Extension -->
 	<xsd:element name="MostViolated" type="apkp:MostViolatedType">
 		<xsd:annotation>
-			<xsd:documentation> The MostViolated extension is used to provide the most extrem value
+			<xsd:documentation>The MostViolated extension is used to provide the most extrem value
 				of the Metric that is at the source of the associated SDC ALERT CONDITION while the
 				ALERT CONDITION has its presence = true.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="MostViolatedType">
 		<xsd:annotation>
-			<xsd:documentation> Type definition of MostViolatedType elements. </xsd:documentation>
+			<xsd:documentation>Type definition of MostViolatedType elements.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:sequence>
 			<xsd:choice minOccurs="1" maxOccurs="1">
 				<xsd:element name="NumericValue" type="pm:NumericMetricValue">
 					<xsd:annotation>
-						<xsd:documentation> The most extrem value that the Metric had in case it is
-							a pm:NumericMetricValue. </xsd:documentation>
+						<xsd:documentation>The most extrem value that the Metric had in case it is a
+							pm:NumericMetricValue.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 				<xsd:element name="SampleArrayValue" type="pm:SampleArrayValue">
 					<xsd:annotation>
-						<xsd:documentation> The most extrem value that the Metric had in case it is
-							a pm:SampleArrayValue. </xsd:documentation>
+						<xsd:documentation>The most extrem value that the Metric had in case it is a
+							pm:SampleArrayValue.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 				<xsd:element name="StringValue" type="pm:StringMetricValue">
 					<xsd:annotation>
-						<xsd:documentation> The most extrem value that the Metric had in case it is
-							a pm:StringMetricValue. </xsd:documentation>
+						<xsd:documentation>The most extrem value that the Metric had in case it is a
+							pm:StringMetricValue.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:choice>
 			<xsd:element name="Unit" type="pm:CodedValue" minOccurs="0" maxOccurs="1">
 				<xsd:annotation>
-					<xsd:documentation> The unit (dimension) of the MostViolatedValue element, in
-						case it is not the same as the referenced source metric. </xsd:documentation>
+					<xsd:documentation>The unit (dimension) of the MostViolatedValue element, in
+						case it is not the same as the referenced source metric.</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
 		<xsd:attribute name="SourceMetricHandle" type="pm:Handle" use="required">
 			<xsd:annotation>
-				<xsd:documentation> Attribute that set to the pm:HandleRef of the MDIB element that
-					is the source of the SDC ALERT CONDITION. </xsd:documentation>
+				<xsd:documentation>Attribute that set to the pm:HandleRef of the MDIB element that
+					is the source of the SDC ALERT CONDITION.</xsd:documentation>
 			</xsd:annotation>
 		</xsd:attribute>
 	</xsd:complexType>
