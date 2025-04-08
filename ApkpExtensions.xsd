@@ -86,7 +86,7 @@
 	<xsd:complexType name="CountdownEndTimeType">
 		<xsd:annotation>
 			<xsd:documentation>Type definition for CountdownEndTime elements. An SDC ALERT PROVIDER
-				SHALL set it to the latest time that an alert signal inactivation state will end
+				sets it to the latest time that an alert signal inactivation state will end
 				automatically.</xsd:documentation>
 		</xsd:annotation>
 		<xsd:simpleContent>
@@ -226,8 +226,8 @@
 				required by SDC ALERT CONSUMERs to determine the point in time the priority change
 				happened in comparison to the pm:AlertConditionState/@DeterminationTime used to
 				determine the point in time the pm:AlertConditionState/@Presence changed. An SDC
-				ALERT PROVIDER SHALL only use apkp:PriorityChange when
-				pm:AlertConditionState/@Presence = True.</xsd:documentation>
+				ALERT PROVIDER only uses apkp:PriorityChange when pm:AlertConditionState/@Presence =
+				True.</xsd:documentation>
 		</xsd:annotation>
 	</xsd:element>
 	<xsd:complexType name="PriorityChangeType">
