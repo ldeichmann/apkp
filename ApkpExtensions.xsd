@@ -500,4 +500,112 @@
 			</xsd:enumeration>
 		</xsd:restriction>
 	</xsd:simpleType>
+
+	<!-- Arg variant -->
+	<xsd:simpleType name="AlertOccurrenceIdentifierTupleListEntry">
+		<xsd:annotation>
+			<xsd:documentation>
+				Type definition for the AlertOccurrenceIdentifierTupleListEntry element.
+				The AlertOccurrenceIdentifierTupleListEntry is a # separated entry for the following types:
+					- AlertOccurrenceIdentifier: UUID identifying the alert occurrence uniquely.
+					- @StateVersion: Version of the SDC ALERT CONDITION state.
+					- @Presence: Presence of the SDC ALERT CONDITION.
+					- PRIORITY: Priority applicable for the SDC ALERT CONDITION.
+					- @Rank: Rank of the SDC ALERT CONDITION. If no @Rank is defined, the value is the empty string.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>
+					Pattern for the AlertOccurrenceIdentifierTupleListEntry.
+					The segement restrictions are:
+					    1. UUID pattern
+						2. integer only pattern
+						3. boolean pattern
+						4. AlertConditionPriority pattern (Lo|Me|Hi|None)
+						5. optional integer only pattern
+				</xsd:documentation>
+			</xsd:annotation>
+			<xsd:pattern value="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}#[0-9]+#(true|false|1|0)#(Lo|Me|Hi|None)#[0-9]*"></xsd:pattern>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="AlertOccurrenceIdentifierTupleList">
+		<xsd:annotation>
+			<xsd:documentation>
+				The AlertOccurrenceIdentifierTupleList is used to confirm the occurrence of an SDC ALERT CONDITION. It contains a list of AlertOccurrenceIdentifierTupleListEntry elements, each representing a separate confirmation of an alert.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:list itemType="apkp:AlertOccurrenceIdentifierTupleListEntry">
+			<xsd:annotation>
+				<xsd:documentation>List of AlertOccurrenceIdentifierTupleListEntry elements.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:list>
+	 </xsd:simpleType>
+
+	<!-- AlertOccurrenceConfirmationType -->
+	<xsd:complexType name="AlertOccurrenceConfirmationType">
+		<xsd:annotation>
+			<xsd:documentation>
+				The AlertOccurrenceConfirmationType represents a single confirmation of an SDC ALERT CONDITION.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="AlertOccurrenceIdentifier" type="apkp:AlertOccurrenceIdentifierType">
+				<xsd:annotation>
+					<xsd:documentation>
+						pm:AlertConditionState/ext:Extension/apkp:AlertOccurrenceIdentifier of the SDC ALERT CONDITION.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StateVersion" type="pm:VersionCounter">
+				<xsd:annotation>
+					<xsd:documentation>
+						pm:AlertConditionState/@StateVersion of the SDC ALERT CONDITION.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Presence" type="xsd:boolean">
+				<xsd:annotation>
+					<xsd:documentation>
+						pm:AlertConditionState/@Presence of the SDC ALERT CONDITION.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Priority" type="pm:AlertConditionPriority">
+				<xsd:annotation>
+					<xsd:documentation>
+						PRIORITY of the SDC ALERT CONDITION.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="Rank" type="xsd:int" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>
+						Rank of the SDC ALERT CONDITION.
+						 If no @Rank is defined, the value is the empty string.
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<!-- AlertOccurrenceConfirmation -->
+	 <xsd:element name="AlertOccurrenceConfirmation">
+		<xsd:annotation>
+			<xsd:documentation>
+				The AlertOccurrenceConfirmation element is used to confirm the occurrence of an SDC ALERT CONDITION. It contains a list of AlertOccurrenceIdentifierTupleListEntry elements, each representing a separate confirmation of an alert.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:annotation>
+					<xsd:documentation>Sequence of separate confirmations of alerts.</xsd:documentation>
+				</xsd:annotation>
+				<xsd:element name="Confirmation" type="apkp:AlertOccurrenceConfirmationType" maxOccurs="unbounded"/>
+			</xsd:sequence>
+			<xsd:attribute ref="ext:MustUnderstand" use="optional" />
+		</xsd:complexType>
+	 </xsd:element>
+	 
 </xsd:schema>
